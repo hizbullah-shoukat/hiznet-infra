@@ -3,48 +3,129 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hiz_Net Dashboard</title>
+  <title>Hiz_Net Portal</title>
   <style>
-    body {
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+    * {
+      box-sizing: border-box;
       margin: 0;
-      height: 100vh;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #1e90ff, #ff69b4, #ff8c00);
-      background-size: 400% 400%;
-      animation: gradient 10s ease infinite;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: radial-gradient(circle at top left, #111, #000);
+      color: #f1f1f1;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    header {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      font-size: 1.5rem;
+      color: #00e5ff;
+      text-shadow: 0 0 10px #00e5ff55;
+    }
+
+    nav a {
+      color: #ccc;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #00e5ff;
+    }
+
+    main {
+      flex-grow: 1;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: white;
+      padding: 40px;
+    }
+
+    .glass-card {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      backdrop-filter: blur(15px);
+      box-shadow: 0 0 30px rgba(0,0,0,0.5);
+      padding: 40px 60px;
+      max-width: 600px;
       text-align: center;
+      animation: fadeIn 1.2s ease;
     }
-    @keyframes gradient {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
+
+    .glass-card h2 {
+      font-size: 2rem;
+      color: #00e5ff;
+      margin-bottom: 15px;
     }
-    h1 {
-      font-size: 3rem;
-      margin-bottom: 10px;
-      text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+
+    .glass-card p {
+      color: #ccc;
+      font-size: 1.1rem;
+      line-height: 1.6;
     }
-    p {
+
+    .status {
+      margin-top: 25px;
+      font-weight: 600;
+      color: #00ff99;
+      text-shadow: 0 0 10px #00ff9980;
       font-size: 1.2rem;
-      opacity: 0.9;
     }
-    .glow {
-      text-shadow: 0 0 10px #fff, 0 0 20px #fff,
-                   0 0 30px #ff0099, 0 0 40px #ff0099,
-                   0 0 50px #ff0099, 0 0 60px #ff0099,
-                   0 0 70px #ff0099;
+
+    footer {
+      background: rgba(255,255,255,0.05);
+      border-top: 1px solid rgba(255,255,255,0.1);
+      text-align: center;
+      padding: 15px 0;
+      font-size: 0.9rem;
+      color: #999;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
 <body>
-  <div>
-    <h1 class="glow">🚀 HizNet is Live!</h1>
-    <p>Welcome to your automated CI/CD deployed web service.</p>
-  </div>
+  <header>
+    <h1>Hiz_Net Portal</h1>
+    <nav>
+      <a href="#">Dashboard</a>
+      <a href="#">Docs</a>
+      <a href="#">Support</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="glass-card">
+      <h2>🚀 Server Deployment Successful</h2>
+      <p>Your Hiz_Net service is now live and running securely on the deployed node.</p>
+      <p>Monitor system health, manage connections, and access real-time metrics via the dashboard.</p>
+      <div class="status">🟢 STATUS: ONLINE</div>
+    </div>
+  </main>
+
+  <footer>
+    © 2025 Hiz_Net | Automated Deployment Environment Active
+  </footer>
 </body>
 </html>
-
